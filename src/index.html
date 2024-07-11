@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio X</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .active-tab {
+            background-color: #1f2937; /* Darker shade for active tab */
+        }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen">
+
+    <!-- Sidebar -->
+    <div class="flex flex-col md:flex-row min-h-screen">
+        <div class="w-full md:w-1/6 bg-zinc-900 p-4 flex flex-col justify-between">
+            <div>
+                <div class="flex flex-col items-center space-y-4">
+                    <h1 class="text-3xl font-bold mb-8">Audio X</h1>
+                    <nav class="flex flex-col space-y-2 w-full">
+                        <a href="#" class="flex items-center px-4 py-2 hover:bg-zinc-800 rounded">
+                            <span>Home</span>
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-2 hover:bg-zinc-800 rounded">
+                            <span>Search</span>
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-2 hover:bg-zinc-800 rounded">
+                            <span>My Library</span>
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-2 hover:bg-zinc-800 rounded">
+                            <span>New Playlist</span>
+                        </a>
+                        <a href="#" class="flex items-center px-4 py-2 hover:bg-zinc-800 rounded">
+                            <span>Liked Songs</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+            <div>
+                <nav class="flex flex-col space-y-2 w-full">
+                    <a href="#" class="flex items-center px-4 py-2 hover:bg-zinc-800 rounded">
+                        <span>Settings</span>
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-2 hover:bg-zinc-800 rounded">
+                        <span>Log out</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="w-full md:w-5/6 p-4">
+            <div class="flex items-center space-x-4 mb-4">
+                <img src="https://via.placeholder.com/100" alt="Profile Picture" class="rounded-full w-25 h-25">
+                <div>
+                    <h2 class="text-2xl font-bold">Emiway Bantai</h2>
+                    <div class="flex space-x-2 text-sm text-gray-400">
+                        <span>566 Following</span>
+                        <span>•</span>
+                        <span>929 Followers</span>
+                    </div>
+                </div>
+                <button class="bg-blue-600 px-4 py-2 rounded text-white ml-auto">Edit Profile</button>
+            </div>
+
+            <div class="relative flex border-b border-zinc-700 mb-4">
+                <button id="playlist" class="px-4 py-2" onclick="showContent('playlist')">Playlist</button>
+                <button id="downloaded" class="px-4 py-2" onclick="showContent('downloaded')">Downloaded</button>
+                <button id="liked" class="px-4 py-2" onclick="showContent('liked')">Liked</button>
+            </div>
+
+            <div id="content">
+                <!-- Playlist items -->
+                <div id="playlist-content" class="flex flex-col space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://via.placeholder.com/60" alt="Art Techno" class="rounded w-16 h-16">
+                            <div>
+                                <h3 class="text-lg font-bold">Art Techno</h3>
+                                <span class="text-gray-400">10 likes</span>
+                            </div>
+                        </div>
+                        <button class="text-gray-400">></button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://via.placeholder.com/60" alt="Work Out" class="rounded w-16 h-16">
+                            <div>
+                                <h3 class="text-lg font-bold">Work Out</h3>
+                                <span class="text-gray-400">8 likes</span>
+                            </div>
+                        </div>
+                        <button class="text-gray-400">></button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://via.placeholder.com/60" alt="Quiet Hours" class="rounded w-16 h-16">
+                            <div>
+                                <h3 class="text-lg font-bold">Quiet Hours</h3>
+                                <span class="text-gray-400">5 likes</span>
+                            </div>
+                        </div>
+                        <button class="text-gray-400">></button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://via.placeholder.com/60" alt="Deep Focus" class="rounded w-16 h-16">
+                            <div>
+                                <h3 class="text-lg font-bold">Deep Focus</h3>
+                                <span class="text-gray-400">6 likes</span>
+                            </div>
+                        </div>
+                        <button class="text-gray-400">></button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://via.placeholder.com/60" alt="Chill Vibes" class="rounded w-16 h-16">
+                            <div>
+                                <h3 class="text-lg font-bold">Chill Vibes</h3>
+                                <span class="text-gray-400">7 likes</span>
+                            </div>
+                        </div>
+                        <button class="text-gray-400">></button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://via.placeholder.com/60" alt="LoFi Music" class="rounded w-16 h-16">
+                            <div>
+                                <h3 class="text-lg font-bold">LoFi Music</h3>
+                                <span class="text-gray-400">24 likes</span>
+                            </div>
+                        </div>
+                        <button class="text-gray-400">></button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://via.placeholder.com/60" alt="Movie Playlist" class="rounded w-16 h-16">
+                            <div>
+                                <h3 class="text-lg font-bold">Movie Playlist</h3>
+                                <span class="text-gray-400">24 likes</span>
+                            </div>
+                        </div>
+                        <button class="text-gray-400">></button>
+                    </div>
+                </div>
+                <!-- Downloaded items -->
+                <div id="downloaded-content" class="flex flex-col space-y-4 hidden">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://via.placeholder.com/60" alt="Downloaded 1" class="rounded w-16 h-16">
+                            <div>
+                                <h3 class="text-lg font-bold">Downloaded 1</h3>
+                                <span class="text-gray-400">15 likes</span>
+                            </div>
+                        </div>
+                        <button class="text-gray-400">></button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://via.placeholder.com/60" alt="Downloaded 2" class="rounded w-16 h-16">
+                            <div>
+                                <h3 class="text-lg font-bold">Downloaded 2</h3>
+                                <span class="text-gray-400">20 likes</span>
+                            </div>
+                        </div>
+                        <button class="text-gray-400">></button>
+                    </div>
+                </div>
+                <!-- Liked items -->
+                <div id="liked-content" class="flex flex-col space-y-4 hidden">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://via.placeholder.com/60" alt="Liked 1" class="rounded w-16 h-16">
+                            <div>
+                                <h3 class="text-lg font-bold">Liked 1</h3>
+                                <span class="text-gray-400">30 likes</span>
+                            </div>
+                        </div>
+                        <button class="text-gray-400">></button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://via.placeholder.com/60" alt="Liked 2" class="rounded w-16 h-16">
+                            <div>
+                                <h3 class="text-lg font-bold">Liked 2</h3>
+                                <span class="text-gray-400">25 likes</span>
+                            </div>
+                        </div>
+                        <button class="text-gray-400">></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(tab) {
+            const playlistButton = document.getElementById('playlist');
+            const downloadedButton = document.getElementById('downloaded');
+            const likedButton = document.getElementById('liked');
+            const playlistContent = document.getElementById('playlist-content');
+            const downloadedContent = document.getElementById('downloaded-content');
+            const likedContent = document.getElementById('liked-content');
+
+            playlistButton.classList.remove('active-tab');
+            downloadedButton.classList.remove('active-tab');
+            likedButton.classList.remove('active-tab');
+
+            playlistContent.classList.add('hidden');
+            downloadedContent.classList.add('hidden');
+            likedContent.classList.add('hidden');
+
+            if (tab === 'playlist') {
+                playlistButton.classList.add('active-tab');
+                playlistContent.classList.remove('hidden');
+            } else if (tab === 'downloaded') {
+                downloadedButton.classList.add('active-tab');
+                downloadedContent.classList.remove('hidden');
+            } else if (tab === 'liked') {
+                likedButton.classList.add('active-tab');
+                likedContent.classList.remove('hidden');
+            }
+        }
+
+        // Set default tab to playlist
+        showContent('playlist');
+    </script>
+
+</body>
+</html>
